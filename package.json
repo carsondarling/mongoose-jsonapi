@@ -1,5 +1,5 @@
 {
-  "name": "mongoose-jsonapi",
+  "name": "@carsondarling/mongoose-jsonapi",
   "version": "1.0.0",
   "description": "Mongoose plugin that provides JSON API support",
   "main": "index.js",
