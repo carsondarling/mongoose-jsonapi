@@ -1,6 +1,8 @@
 const _ = require('lodash');
-const JSONAPISerializer = require('jsonapi-serializer').Serializer;
-const JSONAPIDeserializer = require('jsonapi-serializer').Deserializer;
+const JSONAPI = require('jsonapi-serializer');
+
+const JSONAPISerializer = JSONAPI.Serializer;
+const JSONAPIDeserializer = JSONAPI.Deserializer;
 
 /**
  * This plugin adds functions to a Mongoose schema for serializing and
@@ -82,3 +84,6 @@ module.exports = function serializerPlugin(schema, options) {
       .then(document => new this(_.omitBy(document, _.isNil)));
   };
 };
+
+// Export underlying JSONAPI library
+module.exports.JSONAPI = JSONAPI;
