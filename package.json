@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/carsondarling/mongoose-jsonapi#readme",
   "dependencies": {
-    "jsonapi-serializer": "3.4.2",
+    "jsonapi-serializer": "3.5.2",
     "lodash": "4.17.4"
   },
   "devDependencies": {
