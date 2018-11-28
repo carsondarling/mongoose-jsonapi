@@ -1,6 +1,6 @@
 {
   "name": "@carsondarling/mongoose-jsonapi",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Mongoose plugin that provides JSON API support",
   "main": "index.js",
   "scripts": {
@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/carsondarling/mongoose-jsonapi#readme",
   "dependencies": {
-    "jsonapi-serializer": "3.5.2",
-    "lodash": "4.17.4"
+    "jsonapi-serializer": "^3.6.3",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "eslint": "3.14.0",
@@ -27,7 +27,7 @@
     "eslint-plugin-jsx-a11y": "3.0.2",
     "eslint-plugin-mocha": "4.8.0",
     "eslint-plugin-react": "6.9.0",
-    "mocha": "3.2.0",
+    "mocha": "^5.2.0",
     "mongoose": "4.7.7",
     "should": "11.1.2"
   }
