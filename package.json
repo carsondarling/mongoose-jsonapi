@@ -21,6 +21,8 @@
     "lodash": "^4.17.11"
   },
   "devDependencies": {
+    "@types/jsonapi-serializer": "^3.6.3",
+    "@types/mongoose": "^5.2.0",
     "eslint": "3.14.0",
     "eslint-config-airbnb": "14.0.0",
     "eslint-plugin-import": "2.2.0",
