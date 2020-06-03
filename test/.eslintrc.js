@@ -5,10 +5,8 @@ module.exports = {
   },
 
   rules: {
-    'mocha/no-exclusive-tests': 'error'
+    'mocha/no-exclusive-tests': 'error',
   },
 
-  plugins: [
-    'mocha',
-  ],
+  plugins: ['mocha'],
 };

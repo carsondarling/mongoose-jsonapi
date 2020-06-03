@@ -35,40 +35,42 @@ describe('mongoose-jsonapi', () => {
 
     describe('.deserialize()', () => {
       it('should deserialize a model', () => {
-        const data = { data: {
-          type: 'samples',
-          id: 'sample_id',
-          attributes: {
-            name: 'Sample Name',
+        const data = {
+          data: {
+            type: 'samples',
+            id: 'sample_id',
+            attributes: {
+              name: 'Sample Name',
+            },
           },
-        } };
+        };
 
-        return Sample.deserialize(data)
-          .then((output) => {
-            output.should.have.property('id');
-            output.id.should.eql(data.data.id);
-            output.should.have.property('name');
-            output.name.should.eql(data.data.attributes.name);
-          });
+        return Sample.deserialize(data).then((output) => {
+          output.should.have.property('id');
+          output.id.should.eql(data.data.id);
+          output.should.have.property('name');
+          output.name.should.eql(data.data.attributes.name);
+        });
       });
     });
 
     describe('.fromJSONAPI()', () => {
       it('should deserialize a model', () => {
-        const data = { data: {
-          type: 'samples',
-          id: new mongoose.Types.ObjectId(),
-          attributes: {
-            name: 'Sample Name',
+        const data = {
+          data: {
+            type: 'samples',
+            id: new mongoose.Types.ObjectId(),
+            attributes: {
+              name: 'Sample Name',
+            },
           },
-        } };
+        };
 
-        return Sample.fromJSONAPI(data)
-          .then((sample) => {
-            sample.should.be.instanceOf(Sample);
-            sample.id.should.eql(data.data.id.toString());
-            sample.name.should.eql(data.data.attributes.name);
-          });
+        return Sample.fromJSONAPI(data).then((sample) => {
+          sample.should.be.instanceOf(Sample);
+          sample.id.should.eql(data.data.id.toString());
+          sample.name.should.eql(data.data.attributes.name);
+        });
       });
     });
   });
@@ -100,17 +102,18 @@ describe('mongoose-jsonapi', () => {
       it('should update a model', () => {
         const s = new Sample({ name: 'Sample Name' });
 
-        const data = { data: {
-          id: s.id,
-          type: 'samples',
-          attributes: { name: 'New Name' },
-        } };
+        const data = {
+          data: {
+            id: s.id,
+            type: 'samples',
+            attributes: { name: 'New Name' },
+          },
+        };
 
-        return s.updateFromJSONAPI(data)
-          .then(() => {
-            s.should.be.instanceOf(Sample);
-            s.name.should.eql(data.data.attributes.name);
-          });
+        return s.updateFromJSONAPI(data).then(() => {
+          s.should.be.instanceOf(Sample);
+          s.name.should.eql(data.data.attributes.name);
+        });
       });
     });
   });

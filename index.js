@@ -41,11 +41,10 @@ module.exports = function serializerPlugin(schema, options) {
    */
   // eslint-disable-next-line no-param-reassign
   schema.methods.updateFromJSONAPI = function updateFromJSONAPI(data) {
-    return Deserializer.deserialize(data)
-      .then(obj => {
-        _.assign(this, _.omitBy(obj, _.isNil));
-        return this;
-      });
+    return Deserializer.deserialize(data).then((obj) => {
+      _.assign(this, _.omitBy(obj, _.isNil));
+      return this;
+    });
   };
 
   /**
@@ -65,8 +64,7 @@ module.exports = function serializerPlugin(schema, options) {
    */
   // eslint-disable-next-line no-param-reassign
   schema.statics.deserialize = function deserialize(data) {
-    return Deserializer.deserialize(data)
-      .then(obj => _.omitBy(obj, _.isNil));
+    return Deserializer.deserialize(data).then((obj) => _.omitBy(obj, _.isNil));
   };
 
   /**
@@ -77,11 +75,11 @@ module.exports = function serializerPlugin(schema, options) {
   // eslint-disable-next-line no-param-reassign
   schema.statics.fromJSONAPI = function fromJSONAPI(data) {
     return Deserializer.deserialize(data)
-      .then(document => {
+      .then((document) => {
         if (document.id) document._id = document.id;
         return document;
       })
-      .then(document => new this(_.omitBy(document, _.isNil)));
+      .then((document) => new this(_.omitBy(document, _.isNil)));
   };
 };
 

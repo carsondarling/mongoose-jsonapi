@@ -29,10 +29,9 @@ const jsonAPIDocument = {
   },
 };
 
-Sample.fromJSONAPI(jsonAPIDocument)
-  .then(sample => {
-    // -> Sample document
-  });
+Sample.fromJSONAPI(jsonAPIDocument).then((sample) => {
+  // Sample document
+});
 ```
 
 ## API
@@ -40,9 +39,10 @@ Sample.fromJSONAPI(jsonAPIDocument)
 ### Plugin Constructor
 
 ```node
-schema.plugin(jsonapi, { 
+schema.plugin(jsonapi, {
   name: 'sample',
-  attributes: [ // -> array of attribute names to be included when serialized
+  attributes: [
+    // array of attribute names to be included when serialized
     'name',
   ],
   keyForAttributes: 'camelCase', // method for converting key names
