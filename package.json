@@ -18,17 +18,23 @@
   "homepage": "https://github.com/carsondarling/mongoose-jsonapi#readme",
   "dependencies": {
     "jsonapi-serializer": "^3.6.3",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.15"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
   },
   "devDependencies": {
-    "eslint": "3.14.0",
-    "eslint-config-airbnb": "14.0.0",
-    "eslint-plugin-import": "2.2.0",
-    "eslint-plugin-jsx-a11y": "3.0.2",
-    "eslint-plugin-mocha": "4.8.0",
-    "eslint-plugin-react": "6.9.0",
-    "mocha": "^5.2.0",
-    "mongoose": "4.7.7",
-    "should": "11.1.2"
+    "eslint": "7.1.0",
+    "eslint-config-airbnb-base": "14.1.0",
+    "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-mocha": "7.0.1",
+    "mocha": "7.2.0",
+    "mongoose": "5.9.17",
+    "prettier": "2.0.5",
+    "should": "13.2.3"
   }
 }
